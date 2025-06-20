@@ -1,0 +1,3 @@
+Flask==2.3.3
+# Para futuras funcionalidades (ex: Flask-Mail, Flask-SQLAlchemy)
+# Flask-SEO # Se quiser usar o Flask-SEO para SEO mais avançado
