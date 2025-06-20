@@ -1,0 +1,197 @@
+/* Base styles */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Fonte mais profissional */
+    transition: background-color 0.3s, color 0.3s;
+    min-height: 100vh; /* Para o footer ir para o final da página */
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+   flex-grow: 1; /* Faz o conteúdo principal crescer e empurrar o footer */
+}
+
+/* Dark Theme */
+html[data-theme='dark'] body {
+    background-color: #121212; /* Darker background */
+    color: #e0e0e0;
+}
+
+html[data-theme='dark'] .navbar-dark {
+    background-color: #0a0a0a !important; /* Even darker navbar */
+    border-bottom: 1px solid #ffd700; /* Linha dourada */
+}
+
+html[data-theme='dark'] .navbar-nav .nav-link {
+    color: #e0e0e0 !important;
+}
+html[data-theme='dark'] .navbar-nav .nav-link:hover {
+    color: #ffd700 !important;
+}
+html[data-theme='dark'] .navbar-nav .nav-link.active {
+    color: #ffd700 !important;
+    font-weight: bold;
+}
+
+html[data-theme='dark'] .footer {
+    background-color: #0a0a0a !important;
+    color: #e0e0e0;
+    border-top: 1px solid #ffd700; /* Linha dourada */
+}
+
+html[data-theme='dark'] .card {
+   background-color: #1a1a1a;
+   border-color: #333;
+}
+html[data-theme='dark'] .card.border-golden {
+   border-color: #ffd700 !important;
+}
+
+html[data-theme='dark'] .form-control {
+   background-color: #333;
+   color: #e0e0e0;
+   border-color: #555;
+}
+html[data-theme='dark'] .form-control::placeholder {
+   color: #bbb;
+}
+
+html[data-theme='dark'] .breadcrumb-item a {
+   color: #ffd700;
+}
+html[data-theme='dark'] .breadcrumb-item.active {
+   color: #e0e0e0;
+}
+
+
+/* Light Theme */
+html[data-theme='light'] body {
+    background-color: #ffffff;
+    color: #343a40;
+}
+
+html[data-theme='light'] .navbar-light {
+    background-color: #f8f9fa !important;
+    border-bottom: 1px solid #dee2e6;
+}
+html[data-theme='light'] .navbar-nav .nav-link {
+    color: #343a40 !important;
+}
+html[data-theme='light'] .navbar-nav .nav-link:hover {
+    color: #0056b3 !important;
+}
+html[data-theme='light'] .navbar-nav .nav-link.active {
+    color: #0056b3 !important;
+    font-weight: bold;
+}
+
+html[data-theme='light'] .footer {
+    background-color: #e9ecef !important;
+    color: #343a40;
+    border-top: 1px solid #dee2e6;
+}
+
+html[data-theme='light'] .card {
+   background-color: #ffffff;
+   border-color: #dee2e6;
+}
+
+html[data-theme='light'] .form-control {
+   background-color: #ffffff;
+   color: #343a40;
+   border-color: #ced4da;
+}
+
+/* Golden Accent */
+h1, h2, h3, h4, h5, h6 {
+    color: inherit; /* Inherit from body for light theme, overridden by dark theme specific rule */
+}
+html[data-theme='dark'] h1, html[data-theme='dark'] h2, html[data-theme='dark'] h3 {
+    color: #ffd700; /* Golden color for headings in dark mode */
+}
+
+.btn-golden {
+    background-color: #ffd700;
+    color: #1a1a1a;
+    border-color: #ffd700;
+    font-weight: bold;
+    transition: background-color 0.3s, border-color 0.3s, color 0.3s;
+}
+.btn-golden:hover {
+    background-color: #e6b800;
+    border-color: #e6b800;
+    color: #1a1a1a;
+}
+
+.btn-outline-golden {
+   color: #ffd700;
+   border-color: #ffd700;
+   transition: all 0.3s;
+}
+.btn-outline-golden:hover {
+   background-color: #ffd700;
+   color: #1a1a1a;
+   border-color: #ffd700;
+}
+
+.border-golden {
+   border: 1px solid #ffd700 !important;
+}
+
+
+/* Scroll to Top Button */
+#scrollToTopBtn {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    right: 30px;
+    z-index: 99;
+    border: none;
+    outline: none;
+    background-color: #ffd700;
+    color: #1a1a1a;
+    cursor: pointer;
+    padding: 15px;
+    border-radius: 50%;
+    font-size: 18px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+#scrollToTopBtn:hover {
+    background-color: #e6b800;
+    transform: translateY(-3px);
+}
+
+/* Lazy loading for images and videos */
+img[data-src], video[data-src] {
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+    min-height: 150px; /* Previne layout shift */
+    background-color: #eee; /* Placeholder background */
+}
+
+img.lazyloaded, video.lazyloaded {
+    opacity: 1;
+}
+
+.hero-section {
+   background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('/static/img/hero_bg.jpg') no-repeat center center; /* Crie uma imagem hero_bg.jpg */
+   background-size: cover;
+   color: white;
+   padding: 100px 0;
+   animation: fadeIn 1s ease-in-out;
+}
+
+@keyframes fadeIn {
+   from { opacity: 0; }
+   to { opacity: 1; }
+}
+
+/* Social links styling */
+.social-links a {
+    transition: transform 0.2s ease-in-out;
+}
+.social-links a:hover {
+    transform: scale(1.1);
+}

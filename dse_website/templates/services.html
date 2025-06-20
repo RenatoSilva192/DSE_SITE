@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block title %}Serviços - DSE Segurança Eletrônica e Serviços LTDA{% endblock %}
+
+{% block content %}
+<h1 class="mb-4">Nossos Serviços Completos</h1>
+<p class="lead">A DSE oferece uma gama completa de serviços para garantir a segurança, funcionalidade e valorização do seu imóvel ou empresa. Explore nossas especialidades:</p>
+
+<div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4 mt-4">
+    {% for service in services %}
+    <div class="col">
+        <div class="card h-100 {% if request.cookies.get('theme', 'dark') == 'dark' %}bg-dark text-white border-golden{% else %}bg-light text-dark{% endif %}">
+            {% if service.image %}
+            <img data-src="{{ url_for('static', filename='img/' + service.image) }}" class="card-img-top lazyload" alt="{{ service.title }}">
+            {% elif service.video %}
+            <video data-src="{{ url_for('static', filename='video/' + service.video) }}" class="card-img-top lazyload" autoplay loop muted playsinline></video>
+            {% elif service.images %}
+            <img data-src="{{ url_for('static', filename='img/' + service.images[0]) }}" class="card-img-top lazyload" alt="{{ service.title }}">
+            {% endif %}
+            <div class="card-body">
+                <h5 class="card-title">{{ service.title }}</h5>
+                <p class="card-text">{{ service.description[:150] }}...</p> {# Exemplo de descrição um pouco mais longa #}
+                <a href="{{ url_for('service_detail', service_id=service.id) }}" class="btn btn-sm btn-outline-golden mt-2">Detalhes</a>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}

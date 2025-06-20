@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+
+{% block title %}Contato - DSE Segurança Eletrônica e Serviços LTDA{% endblock %}
+
+{% block content %}
+<h1 class="mb-4">Fale Conosco</h1>
+<p class="lead">Tem alguma dúvida, precisa de um orçamento ou deseja mais informações sobre nossos serviços? Entre em contato conosco! Nossa equipe está pronta para atendê-lo.</p>
+
+<div class="row mt-5">
+    <div class="col-md-6">
+        <h2 class="mb-3">Informações de Contato</h2>
+        <p><i class="fas fa-phone-alt me-2"></i> **Telefone:** (85) 9.8504.6690</p>
+        <p><i class="fas fa-whatsapp me-2"></i> **WhatsApp:** <a href="https://wa.me/+558585046690" target="_blank">(85) 9.8504.6690</a></p>
+        <p><i class="fas fa-envelope me-2"></i> **E-mail:** <a href="mailto:dsecontato01@gmail.com">dsecontato01@gmail.com</a></p>
+        {% comment %} <p><i class="fas fa-map-marker-alt me-2"></i> **Endereço:** Rua Exemplo, 123, Bairro Centro, Fortaleza - CE, CEP: XXXXX-XXX</p> {% endcomment %}
+        <div class="social-links mt-4">
+            <a href="https://wa.me/+558585046690" target="_blank" class="text-decoration-none me-3"><i class="fab fa-whatsapp fa-3x" style="color: #25D366;"></i></a>
+            <a href="https://www.instagram.com/servicosdse" target="_blank" class="text-decoration-none"><i class="fab fa-instagram fa-3x" style="color: #E1306C;"></i></a>
+        </div>
+    </div>
+    {% comment %} <div class="col-md-6">
+        <h2 class="mb-3">Envie sua Mensagem</h2>
+        <form>
+            <div class="mb-3">
+                <label for="name" class="form-label">Nome Completo</label>
+                <input type="text" class="form-control" id="name" required>
+            </div>
+            <div class="mb-3">
+                <label for="email" class="form-label">E-mail</label>
+                <input type="email" class="form-control" id="email" required>
+            </div>
+            <div class="mb-3">
+                <label for="phone" class="form-label">Telefone (opcional)</label>
+                <input type="tel" class="form-control" id="phone">
+            </div>
+            <div class="mb-3">
+                <label for="message" class="form-label">Sua Mensagem</label>
+                <textarea class="form-control" id="message" rows="5" required></textarea>
+            </div>
+            <button type="submit" class="btn btn-golden">Enviar Mensagem</button>
+        </form>
+    </div> {% endcomment %}
+</div>
+
+{% comment %} <div class="mt-5 text-center">
+   <h2 class="mb-3">Nossa Localização</h2>
+   <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3981.3653198083893!2d-38.5280962!3d-3.7318721!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x7c749912345!2sFortaleza%2C%20CE!5e0!3m2!1spt-BR!2sbr!4v1718848900000!5m2!1spt-BR!2sbr" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+</div> {% endcomment %}
+{% endblock %}

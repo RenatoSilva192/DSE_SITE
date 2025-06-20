@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+
+{% block title %}Home - DSE Segurança Eletrônica e Serviços LTDA{% endblock %}
+
+{% block content %}
+<section class="hero-section text-center py-5">
+    <h1 class="display-4 mb-4">DSE Segurança Eletrônica e Serviços LTDA</h1>
+    <p class="lead">Soluções completas e inovadoras em segurança eletrônica, serviços elétricos e manutenção predial em Fortaleza e região.</p>
+    <a href="{{ url_for('contact') }}" class="btn btn-golden btn-lg mt-3">Fale Conosco</a>
+</section>
+
+<section class="services-overview py-5">
+    <h2 class="text-center mb-5">Nossos Principais Serviços</h2>
+    <div class="row row-cols-1 row-cols-md-3 g-4">
+        {% for service in services[:6] %} {# Mostra os 6 primeiros serviços na home #}
+        <div class="col">
+            <div class="card h-100 {% if request.cookies.get('theme', 'dark') == 'dark' %}bg-dark text-white border-golden{% else %}bg-light text-dark{% endif %}">
+                {% if service.image %}
+                <img data-src="{{ url_for('static', filename='img/' + service.image) }}" class="card-img-top lazyload" alt="{{ service.title }}">
+                {% elif service.video %}
+                <video data-src="{{ url_for('static', filename='video/' + service.video) }}" class="card-img-top lazyload" autoplay loop muted playsinline></video>
+                {% elif service.images %}
+                <img data-src="{{ url_for('static', filename='img/' + service.images[0]) }}" class="card-img-top lazyload" alt="{{ service.title }}">
+                {% endif %}
+                <div class="card-body">
+                    <h5 class="card-title">{{ service.title }}</h5>
+                    <p class="card-text">{{ service.description[:100] }}...</p> {# Exemplo de descrição curta #}
+                    <a href="{{ url_for('service_detail', service_id=service.id) }}" class="btn btn-sm btn-outline-golden">Saiba Mais</a>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+    <div class="text-center mt-5">
+        <a href="{{ url_for('services') }}" class="btn btn-golden btn-lg">Ver Todos os Serviços</a>
+    </div>
+</section>
+
+<section class="about-us-summary py-5">
+    <h2 class="text-center mb-4">Quem Somos</h2>
+    <p class="text-center w-75 mx-auto">A DSE Segurança Eletrônica e Serviços LTDA é uma empresa dedicada a oferecer soluções completas e de alta qualidade em segurança eletrônica, instalações elétricas e manutenção predial. Com anos de experiência no mercado de Fortaleza e região, nossa equipe de profissionais qualificados garante um serviço confiável e eficiente, focado na sua segurança e satisfação.</p>
+    <div class="text-center mt-4">
+        <a href="{{ url_for('about') }}" class="btn btn-outline-golden">Conheça Nossa História</a>
+    </div>
+</section>
+{% endblock %}
