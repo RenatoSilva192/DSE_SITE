@@ -1,33 +1,41 @@
 /* Base styles */
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Fonte mais profissional */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    /* Fonte mais profissional */
     transition: background-color 0.3s, color 0.3s;
-    min-height: 100vh; /* Para o footer ir para o final da página */
+    min-height: 100vh;
+    /* Para o footer ir para o final da página */
     display: flex;
     flex-direction: column;
 }
 
 main {
-   flex-grow: 1; /* Faz o conteúdo principal crescer e empurrar o footer */
+    flex-grow: 1;
+    /* Faz o conteúdo principal crescer e empurrar o footer */
 }
 
 /* Dark Theme */
 html[data-theme='dark'] body {
-    background-color: #121212; /* Darker background */
+    background-color: #121212;
+    /* Darker background */
     color: #e0e0e0;
 }
 
 html[data-theme='dark'] .navbar-dark {
-    background-color: #0a0a0a !important; /* Even darker navbar */
-    border-bottom: 1px solid #ffd700; /* Linha dourada */
+    background-color: #0a0a0a !important;
+    /* Even darker navbar */
+    border-bottom: 1px solid #ffd700;
+    /* Linha dourada */
 }
 
 html[data-theme='dark'] .navbar-nav .nav-link {
     color: #e0e0e0 !important;
 }
+
 html[data-theme='dark'] .navbar-nav .nav-link:hover {
     color: #ffd700 !important;
 }
+
 html[data-theme='dark'] .navbar-nav .nav-link.active {
     color: #ffd700 !important;
     font-weight: bold;
@@ -36,31 +44,35 @@ html[data-theme='dark'] .navbar-nav .nav-link.active {
 html[data-theme='dark'] .footer {
     background-color: #0a0a0a !important;
     color: #e0e0e0;
-    border-top: 1px solid #ffd700; /* Linha dourada */
+    border-top: 1px solid #ffd700;
+    /* Linha dourada */
 }
 
 html[data-theme='dark'] .card {
-   background-color: #1a1a1a;
-   border-color: #333;
+    background-color: #1a1a1a;
+    border-color: #333;
 }
+
 html[data-theme='dark'] .card.border-golden {
-   border-color: #ffd700 !important;
+    border-color: #ffd700 !important;
 }
 
 html[data-theme='dark'] .form-control {
-   background-color: #333;
-   color: #e0e0e0;
-   border-color: #555;
+    background-color: #333;
+    color: #e0e0e0;
+    border-color: #555;
 }
+
 html[data-theme='dark'] .form-control::placeholder {
-   color: #bbb;
+    color: #bbb;
 }
 
 html[data-theme='dark'] .breadcrumb-item a {
-   color: #ffd700;
+    color: #ffd700;
 }
+
 html[data-theme='dark'] .breadcrumb-item.active {
-   color: #e0e0e0;
+    color: #e0e0e0;
 }
 
 
@@ -74,12 +86,15 @@ html[data-theme='light'] .navbar-light {
     background-color: #f8f9fa !important;
     border-bottom: 1px solid #dee2e6;
 }
+
 html[data-theme='light'] .navbar-nav .nav-link {
     color: #343a40 !important;
 }
+
 html[data-theme='light'] .navbar-nav .nav-link:hover {
     color: #0056b3 !important;
 }
+
 html[data-theme='light'] .navbar-nav .nav-link.active {
     color: #0056b3 !important;
     font-weight: bold;
@@ -92,22 +107,32 @@ html[data-theme='light'] .footer {
 }
 
 html[data-theme='light'] .card {
-   background-color: #ffffff;
-   border-color: #dee2e6;
+    background-color: #ffffff;
+    border-color: #dee2e6;
 }
 
 html[data-theme='light'] .form-control {
-   background-color: #ffffff;
-   color: #343a40;
-   border-color: #ced4da;
+    background-color: #ffffff;
+    color: #343a40;
+    border-color: #ced4da;
 }
 
 /* Golden Accent */
-h1, h2, h3, h4, h5, h6 {
-    color: inherit; /* Inherit from body for light theme, overridden by dark theme specific rule */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: inherit;
+    /* Inherit from body for light theme, overridden by dark theme specific rule */
 }
-html[data-theme='dark'] h1, html[data-theme='dark'] h2, html[data-theme='dark'] h3 {
-    color: #ffd700; /* Golden color for headings in dark mode */
+
+html[data-theme='dark'] h1,
+html[data-theme='dark'] h2,
+html[data-theme='dark'] h3 {
+    color: #ffd700;
+    /* Golden color for headings in dark mode */
 }
 
 .btn-golden {
@@ -117,6 +142,7 @@ html[data-theme='dark'] h1, html[data-theme='dark'] h2, html[data-theme='dark'] 
     font-weight: bold;
     transition: background-color 0.3s, border-color 0.3s, color 0.3s;
 }
+
 .btn-golden:hover {
     background-color: #e6b800;
     border-color: #e6b800;
@@ -124,18 +150,19 @@ html[data-theme='dark'] h1, html[data-theme='dark'] h2, html[data-theme='dark'] 
 }
 
 .btn-outline-golden {
-   color: #ffd700;
-   border-color: #ffd700;
-   transition: all 0.3s;
+    color: #ffd700;
+    border-color: #ffd700;
+    transition: all 0.3s;
 }
+
 .btn-outline-golden:hover {
-   background-color: #ffd700;
-   color: #1a1a1a;
-   border-color: #ffd700;
+    background-color: #ffd700;
+    color: #1a1a1a;
+    border-color: #ffd700;
 }
 
 .border-golden {
-   border: 1px solid #ffd700 !important;
+    border: 1px solid #ffd700 !important;
 }
 
 
@@ -164,34 +191,106 @@ html[data-theme='dark'] h1, html[data-theme='dark'] h2, html[data-theme='dark'] 
 }
 
 /* Lazy loading for images and videos */
-img[data-src], video[data-src] {
+img[data-src],
+video[data-src] {
     opacity: 0;
     transition: opacity 0.5s ease-in-out;
-    min-height: 150px; /* Previne layout shift */
-    background-color: #eee; /* Placeholder background */
+    min-height: 150px;
+    /* Previne layout shift */
+    background-color: #eee;
+    /* Placeholder background */
 }
 
-img.lazyloaded, video.lazyloaded {
+img.lazyloaded,
+video.lazyloaded {
     opacity: 1;
 }
 
 .hero-section {
-   background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('/static/img/hero_bg.jpg') no-repeat center center; /* Crie uma imagem hero_bg.jpg */
-   background-size: cover;
-   color: white;
-   padding: 100px 0;
-   animation: fadeIn 1s ease-in-out;
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('/static/img/hero_bg.jpg') no-repeat center center;
+    /* Crie uma imagem hero_bg.jpg */
+    background-size: cover;
+    color: white;
+    padding: 100px 0;
+    animation: fadeIn 1s ease-in-out;
 }
 
 @keyframes fadeIn {
-   from { opacity: 0; }
-   to { opacity: 1; }
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
 }
 
 /* Social links styling */
 .social-links a {
     transition: transform 0.2s ease-in-out;
 }
+
 .social-links a:hover {
     transform: scale(1.1);
+}
+
+/* Estilo para imagens dentro dos cards */
+/* Estilo para imagens dentro dos cards (nas listagens) */
+.card-img-top {
+    width: 100%;
+    height: 250px;     /* Mantém a altura fixa para as imagens */
+    object-fit: cover;
+    object-position: center;
+}
+
+/* ****************************************************** */
+/* NOVO BLOCO PARA VÍDEOS DENTRO DOS CARDS DE LISTAGEM */
+/* ****************************************************** */
+/*
+Isso afeta os vídeos que aparecem diretamente no loop de cards
+na página inicial e na página de serviços.
+*/
+.card video { /* Seleciona qualquer vídeo dentro de um card */
+    width: 100%;
+    height: auto; /* Garante que a altura do vídeo não seja fixa */
+    object-fit: contain; /* Garante que o vídeo se ajuste sem cortes */
+    display: block; /* Remove possíveis espaços extras */
+    /* Podemos até forçar uma proporção específica se houver um padrão para os vídeos */
+    /* Por exemplo, para vídeos 16:9 (altura será 56.25% da largura) */
+    /* aspect-ratio: 16 / 9; */ /* Se você quer uma proporção fixa */
+}
+
+/* Caso você esteja exibindo o vídeo usando a estrutura do Bootstrap "ratio" no card */
+/* Este bloco talvez não seja necessário se o `card video` acima funcionar */
+.card .ratio.ratio-16x9 {
+    height: auto; /* Permite que o container de proporção se ajuste */
+}
+
+/* ****************************************************** */
+
+/* Garante que os próprios cards tenham a mesma altura usando flexbox */
+.row.g-4 .col {
+    display: flex;
+}
+
+.row.g-4 .col .card {
+    flex: 1; /* Faz o card preencher o espaço disponível e ter a mesma altura */
+    display: flex;
+    flex-direction: column;
+}
+
+.row.g-4 .col .card .card-body {
+    flex-grow: 1; /* Faz o corpo do card crescer para empurrar o botão para baixo */
+    display: flex;
+    flex-direction: column;
+}
+
+.row.g-4 .col .card .card-body .btn {
+    margin-top: auto; /* Empurra o botão para o final do card-body */
+}
+
+/* Adicione ou modifique esta regra no seu style.css */
+.card-text {
+    text-align: justify;
+    /* Alinha o texto das descrições */
 }

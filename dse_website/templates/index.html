@@ -11,7 +11,7 @@
 
 <section class="services-overview py-5">
     <h2 class="text-center mb-5">Nossos Principais Serviços</h2>
-    <div class="row row-cols-1 row-cols-md-3 g-4">
+    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-2 g-4">
         {% for service in services[:6] %} {# Mostra os 6 primeiros serviços na home #}
         <div class="col">
             <div class="card h-100 {% if request.cookies.get('theme', 'dark') == 'dark' %}bg-dark text-white border-golden{% else %}bg-light text-dark{% endif %}">
@@ -24,7 +24,7 @@
                 {% endif %}
                 <div class="card-body">
                     <h5 class="card-title">{{ service.title }}</h5>
-                    <p class="card-text">{{ service.description[:100] }}...</p> {# Exemplo de descrição curta #}
+                    <p class="card-text">{{ service.description }}</p> {# Exemplo de descrição curta #}
                     <a href="{{ url_for('service_detail', service_id=service.id) }}" class="btn btn-sm btn-outline-golden">Saiba Mais</a>
                 </div>
             </div>

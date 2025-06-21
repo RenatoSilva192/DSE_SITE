@@ -86,14 +86,14 @@ SERVICES_DATA = [
         "title": "Alpinismo Industrial em Fortaleza",
         "description": "Serviços especializados de acesso por corda para trabalhos em altura em ambientes industriais, como inspeções, manutenção e reparos em estruturas elevadas e de difícil acesso.",
         "video": "altura.mp4",
-        "image": "image4.webp.jpeg"
+        #"image": "image4.webp.jpeg"
     },
     {
         "id": "pintura-predial-fortaleza",
         "title": "Pintura Predial em Fortaleza",
         "description": "Pintura de fachadas e áreas externas de edifícios, utilizando técnicas de alpinismo industrial quando necessário, garantindo acabamento de alta qualidade e durabilidade.",
         "video": "pintura.mp4",
-        "image": "image1.webp.jpeg"
+        #"image": "image1.webp.jpeg"
     },
     {
         "id": "manutencao-predial-fortaleza",

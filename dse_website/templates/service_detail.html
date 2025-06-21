@@ -1,54 +1,67 @@
 {% extends 'base.html' %}
 
-{% block title %}{{ service.title }} - DSE Serviços{% endblock %}
+{% block title %}
+  {{ service.title }} - DSE Serviços
+{% endblock %}
 
 {% block content %}
-<nav aria-label="breadcrumb">
+  <nav aria-label="breadcrumb">
     <ol class="breadcrumb">
-        <li class="breadcrumb-item"><a href="{{ url_for('index') }}">Home</a></li>
-        <li class="breadcrumb-item"><a href="{{ url_for('services') }}">Serviços</a></li>
-        <li class="breadcrumb-item active" aria-current="page">{{ service.title }}</li>
+      <li class="breadcrumb-item">
+        <a href="{{ url_for('index') }}">Home</a>
+      </li>
+      <li class="breadcrumb-item">
+        <a href="{{ url_for('services') }}">Serviços</a>
+      </li>
+      <li class="breadcrumb-item active" aria-current="page">{{ service.title }}</li>
     </ol>
-</nav>
+  </nav>
 
-<h1 class="mb-4">{{ service.title }}</h1>
-<div class="row mb-4">
+  <h1 class="mb-4">{{ service.title }}</h1>
+  <div class="row mb-4">
     <div class="col-md-8">
-        {% if service.video %}
+      {% if service.video %}
+        {# <-- Verifica se há um vídeo #}
         <div class="ratio ratio-16x9 mb-3">
-            <video data-src="{{ url_for('static', filename='video/' + service.video) }}" controls autoplay loop muted playsinline class="lazyload"></video>
+          <video data-src="{{ url_for('static', filename='video/' + service.video) }}" controls autoplay loop muted playsinline class="lazyload"></video>
         </div>
-        {% elif service.image %}
-        <img data-src="{{ url_for('static', filename='img/' + service.image) }}" class="img-fluid rounded shadow-sm lazyload mb-3" alt="{{ service.title }}">
-        {% elif service.images %}
-           <div id="serviceCarousel" class="carousel slide" data-bs-ride="carousel">
-               <div class="carousel-inner">
-                   {% for img in service.images %}
-                   <div class="carousel-item {% if loop.first %}active{% endif %}">
-                       <img data-src="{{ url_for('static', filename='img/' + img) }}" class="d-block w-100 lazyload" alt="{{ service.title }} {{ loop.index }}">
-                   </div>
-                   {% endfor %}
-               </div>
-               {% if service.images|length > 1 %}
-               <button class="carousel-control-prev" type="button" data-bs-target="#serviceCarousel" data-bs-slide="prev">
-                   <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                   <span class="visually-hidden">Previous</span>
-               </button>
-               <button class="carousel-control-next" type="button" data-bs-target="#serviceCarousel" data-bs-slide="next">
-                   <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                   <span class="visually-hidden">Next</span>
-               </button>
-               {% endif %}
-           </div>
-        {% endif %}
+      {% elif service.image %}
+        {# <-- Se não houver vídeo, verifica se há uma imagem #}
+        <img data-src="{{ url_for('static', filename='img/' + service.image) }}" class="img-fluid rounded shadow-sm lazyload mb-3" alt="{{ service.title }}" />
+      {% elif service.images %}
+        {# <-- Se não houver vídeo ou imagem única, verifica se há múltiplas imagens #}
+        <div id="serviceCarousel" class="carousel slide" data-bs-ride="carousel">
+          <div class="carousel-inner">
+            {% for img in service.images %}
+              <div class="carousel-item {% if loop.first %}active{% endif %}">
+                <img data-src="{{ url_for('static', filename='img/' + img) }}" class="d-block w-100 lazyload" alt="{{ service.title }} {{ loop.index }}" />
+              </div>
+            {% endfor %}
+          </div>
+          {% if service.images|length > 1 %}
+            <button class="carousel-control-prev" type="button" data-bs-target="#serviceCarousel" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#serviceCarousel" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+          {% endif %}
+        </div>
+      {% endif %}
     </div>
     <div class="col-md-4">
-        <div class="card {% if request.cookies.get('theme', 'dark') == 'dark' %}bg-dark text-white border-golden{% else %}bg-light text-dark{% endif %} p-3">
-            <h4 class="card-title">Detalhes do Serviço</h4>
-            <p class="card-text">{{ service.description }}</p>
-            <a href="{{ url_for('contact') }}" class="btn btn-golden mt-3">Solicitar Orçamento</a>
-        </div>
+      <div class="card {% if request.cookies.get('theme', 'dark') == 'dark' %}
+          bg-dark text-white border-golden
+        {% else %}
+          bg-light text-dark
+        {% endif %} p-3">
+        <h4 class="card-title">Detalhes do Serviço</h4>
+        <p class="card-text">{{ service.description }}</p>
+        <a href="{{ url_for('contact') }}" class="btn btn-golden mt-3">Solicitar Orçamento</a>
+      </div>
     </div>
-</div>
-<p class="mt-4">Para mais informações sobre este serviço ou para agendar uma visita técnica, entre em contato conosco.</p>
+  </div>
+  <p class="mt-4">Para mais informações sobre este serviço ou para agendar uma visita técnica, entre em contato conosco.</p>
 {% endblock %}
