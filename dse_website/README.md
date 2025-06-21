@@ -1,0 +1,1 @@
+Criação de site para a empresa DSE Segurança Eletrônica e Serviços LTDA, o site rerá a descrição dos serviços oferecidos, imagens reais dos trabalhos, descrição da empresa, contatos por telefone, whatsapp, instagram e e-mail, assim como um campo de mensagem que poderá ser deixada pelo cliente para o administrador, que receberá a mensagem por e-mail.
