@@ -79,7 +79,7 @@ SERVICES_DATA = [
         "id": "instalacao-de-fio-terra",
         "title": "Instalação de Fio Terra",
         "description": "Implementação de sistemas de aterramento elétrico (fio terra) para proteção de pessoas e equipamentos contra choques elétricos e surtos de energia, essencial para a segurança de qualquer instalação.",
-        "image": "image7.webp.jpeg" # Reutiliza imagem
+        "image": None
     },
     {
         "id": "alpinismo-industrial-fortaleza",
